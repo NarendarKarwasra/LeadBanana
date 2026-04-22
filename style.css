@@ -181,6 +181,12 @@ html {
     width: 100%;
 }
 
+.navmenu {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
 .navmenu ul {
     display: flex;
     align-items: center;
@@ -230,8 +236,6 @@ html {
 }
 
 
-
-
 .dropdown {
     position: relative;
 }
@@ -244,7 +248,7 @@ html {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    right: 0%;
+    left: -500%;
     background: #ffe26e;
     min-width: 1000px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -308,6 +312,30 @@ html {
 }
 
 
+.nav-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-options a {
+    text-decoration: none;
+    border: 2px solid #FCBB06;
+    color: #FCBB06;
+    padding: 4px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-options a:hover {
+    background: #FCBB06;
+    color: #fff;
+    transform: scale(1.07);
+}
+
+
 
 
 .mobile-only {
@@ -340,20 +368,55 @@ html {
 
 
 
+@media (max-width: 1060px) {
 
-@media (max-width: 1300px) {
-
-    .dropdown-menu {
-        right: -240px;
+    .mobile-nav-toggle {
+        display: flex;
     }
 
-}
+    .mobile-only {
+        display: block;
+    }
 
+    .desktop-only {
+        display: none;
+    }
 
-@media (max-width: 1000px) {
+    .navmenu {
+        position: fixed;
+        top: -20px;
+        right: -70%;
+        width: 50%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 40px;
+        transition: 0.3s ease-in-out;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        /* display: flex;  */
+        /* overflow-y: auto; */
+    }
+
+    .navmenu ul {
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 40px;
+    }
+
+    .navmenu.open {
+        right: -30px;
+    }
+
+    .nav-options {
+        gap: 20px;
+        flex-direction: column;
+        width: 100%;
+    }
 
     .dropdown-menu {
-        right: -200px;
+        left: -500%;
+        z-index: 1000;
         min-width: 500px;
     }
 
@@ -372,12 +435,23 @@ html {
 @media (max-width: 768px) {
 
     .dropdown-menu {
-        right: -100px;
+        left: -500%;
         z-index: 1000;
     }
 
     .item-text p {
         display: none;
+    }
+
+
+    .navmenu {
+        gap: 40px;
+        flex-direction: column;
+    }
+
+    .nav-options {
+        gap: 20px;
+        flex-direction: column;
     }
 
 }
@@ -386,7 +460,7 @@ html {
 @media (max-width: 570px) {
 
     .dropdown-menu {
-        right: -100%;
+        left: -200%;
         min-width: 280px;
     }
 
