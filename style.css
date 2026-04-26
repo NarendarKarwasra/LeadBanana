@@ -581,10 +581,11 @@ html {
     background: #FEFBF6;
     padding-top: 140px;
     padding-bottom: 40px;
-    background-image: url('images/hero-back.webp');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: auto 100%;
+    /* background-image: url('images/hero-back.webp'); */
+    /* background-repeat: no-repeat; */
+    /* background-position: right bottom; */
+    /* background-size: auto 100%; */
+    background: var(--secondary-color);
     overflow: hidden;
 }
 
@@ -606,7 +607,8 @@ html {
     font-size: 55px;
     line-height: 1.2;
     font-weight: 900;
-    color: var(--secondary-color);
+    /* color: var(--secondary-color); */
+    color: #fff;
     margin-bottom: 10px;
 }
 
@@ -617,7 +619,8 @@ html {
 .hero-description {
     font-size: 18px;
     line-height: 1.4;
-    color: #2D3E35;
+    /* color: #2D3E35; */
+    color: #fff;
     opacity: 0.9;
     margin-bottom: 20px;
 }
@@ -690,6 +693,7 @@ html {
 .trial-text {
     font-size: 16px;
     opacity: 0.9;
+    color: #fff;
 }
 
 /* HERO IMAGE (RIGHT) */
