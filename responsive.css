@@ -62,34 +62,15 @@
         transform: translateY(-9px) rotate(-45deg);
     }
 
-
-
-
-
-
 }
-
-
-
-
-
-
 
 
 
 @media (max-width: 570px) {
 
-    .section-container {
-        width: 94%;
-    }
-
     .navmenu {
         width: 70%;
     }
-
-
-
-
 
 }
 
