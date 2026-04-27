@@ -114,7 +114,7 @@
                 </ul>
 
                 <div class="nav-options">
-                    <a href="signup.html">Login</a>
+                    <a href="login.html">Login</a>
                     <a href="request-demo.html" class="nav-book">Book a Demo</a>
                 </div>
 
@@ -353,7 +353,9 @@
 
                 </form>
 
-                <p class="policy-agreement">By submitting this form, you agree to our <a href="terms-and-conditions.html">Terms of Service</a> and <a href="privacy-policy.html">Privacy Policy</a>.</p>
+                <p class="policy-agreement">By submitting this form, you agree to our <a
+                        href="terms-and-conditions.html">Terms of Service</a> and <a href="privacy-policy.html">Privacy
+                        Policy</a>.</p>
 
             </div>
 
@@ -482,7 +484,40 @@
                 </div>
             </div>
         </div>
-    </footer>s
+    </footer>
+
+
+    <div class="whatsapp-bot" id="whatsappBot">
+        <div class="bot-panel">
+            <div class="bot-head">
+                <strong>Lead Banana WhatsApp Assistant</strong>
+                <span>Choose a service or send a custom message.</span>
+            </div>
+            <div class="bot-body">
+                <button class="bot-option" data-message="I would like to Enquire about your Sales CRM Service.">Sales
+                    CRM</button>
+                <button class="bot-option" data-message="I would like to Enquire about your POS Systems Service.">POS
+                    Systems</button>
+                <button class="bot-option"
+                    data-message="I would like to Enquire about your Digital Marketing Service.">Digital
+                    Marketing</button>
+                <button class="bot-option"
+                    data-message="I would like to Enquire about your Lead Generation Service.">Lead Generation</button>
+
+                <div class="bot-input">
+                    <input id="botMessage" type="text" placeholder="Type message...">
+                    <button class="btn-send" id="botSend" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="bot-float" type="button">
+            <span class="bot-float-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </span>
+            <span class="bot-text">Connect with Us</span>
+        </button>
+    </div>
 
 
     <!-- script for navbar -->
@@ -541,6 +576,42 @@
             slideUpElements.forEach(el => slideUpObserver.observe(el));
 
         });
+    </script>
+
+
+    <!-- whatsapp-bot -->
+    <script>
+        const qs = (sel, parent = document) => parent.querySelector(sel);
+        const qsa = (sel, parent = document) => parent.querySelectorAll(sel);
+
+        function initWhatsAppBot() {
+            const container = qs("#whatsappBot");
+            if (!container) return;
+
+            const floatBtn = qs(".bot-float", container);
+            const input = qs("#botMessage", container);
+            const send = qs("#botSend", container);
+            const options = qsa(".bot-option", container);
+
+            // Toggle active class on the main container
+            floatBtn.addEventListener("click", () => {
+                container.classList.toggle("active");
+            });
+
+            options.forEach(button => {
+                button.addEventListener("click", () => {
+                    const msg = button.getAttribute("data-message");
+                    window.open(`https://wa.me/15559521718?text=${encodeURIComponent(msg)}`, "_blank");
+                });
+            });
+
+            send.addEventListener("click", () => {
+                const text = input.value.trim() || "Hello!";
+                window.open(`https://wa.me/15559521718?text=${encodeURIComponent(text)}`, "_blank");
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", initWhatsAppBot);
     </script>
 
 

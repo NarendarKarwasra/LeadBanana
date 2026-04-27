@@ -114,7 +114,7 @@
                 </ul>
 
                 <div class="nav-options">
-                    <a href="signup.html">Login</a>
+                    <a href="login.html">Login</a>
                     <a href="request-demo.html" class="nav-book">Book a Demo</a>
                 </div>
 
@@ -166,7 +166,8 @@
                     </div>
                     <h3>Sales CRM</h3>
                     <p>Manage leads, track deals, and close more sales with a powerful CRM built for your team.</p>
-                    <a href="services/sales-crm.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/sales-crm.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -175,7 +176,8 @@
                     </div>
                     <h3>POS Systems</h3>
                     <p>Simplify billing, inventory, and sales operations with our intuitive POS solutions.</p>
-                    <a href="services/pos-systems.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/pos-systems.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -184,7 +186,8 @@
                     </div>
                     <h3>Whitelabel CRM</h3>
                     <p>Launch your own branded CRM platform and grow your business with your identity.</p>
-                    <a href="services/whitelabel-crm.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/whitelabel-crm.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -193,7 +196,8 @@
                     </div>
                     <h3>Digital Marketing</h3>
                     <p>Reach the right audience and grow your brand with data-driven marketing strategies.</p>
-                    <a href="services/digital-marketing.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/digital-marketing.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -202,7 +206,8 @@
                     </div>
                     <h3>Lead Generation</h3>
                     <p>Generate high-quality leads that convert and fuel your business growth.</p>
-                    <a href="services/lead-generation.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/lead-generation.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -211,7 +216,8 @@
                     </div>
                     <h3>Customer Care Support</h3>
                     <p>Provide outstanding support and build lasting relationships with your customers.</p>
-                    <a href="services/customer-care-support.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/customer-care-support.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -220,7 +226,8 @@
                     </div>
                     <h3>Social Media Marketing</h3>
                     <p>Boost engagement and brand visibility across all major social media platforms.</p>
-                    <a href="services/social-media-marketing.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/social-media-marketing.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -229,7 +236,8 @@
                     </div>
                     <h3>Ads Management</h3>
                     <p>Run high-performing ad campaigns and maximize your return on investment.</p>
-                    <a href="services/facebook-google-ads-management.html" class="service-learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="services/facebook-google-ads-management.html" class="service-learn-more">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -453,6 +461,39 @@
     </footer>
 
 
+    <div class="whatsapp-bot" id="whatsappBot">
+        <div class="bot-panel">
+            <div class="bot-head">
+                <strong>Lead Banana WhatsApp Assistant</strong>
+                <span>Choose a service or send a custom message.</span>
+            </div>
+            <div class="bot-body">
+                <button class="bot-option" data-message="I would like to Enquire about your Sales CRM Service.">Sales
+                    CRM</button>
+                <button class="bot-option" data-message="I would like to Enquire about your POS Systems Service.">POS
+                    Systems</button>
+                <button class="bot-option"
+                    data-message="I would like to Enquire about your Digital Marketing Service.">Digital
+                    Marketing</button>
+                <button class="bot-option"
+                    data-message="I would like to Enquire about your Lead Generation Service.">Lead Generation</button>
+
+                <div class="bot-input">
+                    <input id="botMessage" type="text" placeholder="Type message...">
+                    <button class="btn-send" id="botSend" type="button">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="bot-float" type="button">
+            <span class="bot-float-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </span>
+            <span class="bot-text">Connect with Us</span>
+        </button>
+    </div>
+
+
     <!-- script for navbar -->
     <script>
         const mobileBtn = document.querySelector('.mobile-nav-toggle');
@@ -511,6 +552,41 @@
         });
     </script>
 
+
+    <!-- whatsapp-bot -->
+    <script>
+        const qs = (sel, parent = document) => parent.querySelector(sel);
+        const qsa = (sel, parent = document) => parent.querySelectorAll(sel);
+
+        function initWhatsAppBot() {
+            const container = qs("#whatsappBot");
+            if (!container) return;
+
+            const floatBtn = qs(".bot-float", container);
+            const input = qs("#botMessage", container);
+            const send = qs("#botSend", container);
+            const options = qsa(".bot-option", container);
+
+            // Toggle active class on the main container
+            floatBtn.addEventListener("click", () => {
+                container.classList.toggle("active");
+            });
+
+            options.forEach(button => {
+                button.addEventListener("click", () => {
+                    const msg = button.getAttribute("data-message");
+                    window.open(`https://wa.me/15559521718?text=${encodeURIComponent(msg)}`, "_blank");
+                });
+            });
+
+            send.addEventListener("click", () => {
+                const text = input.value.trim() || "Hello!";
+                window.open(`https://wa.me/15559521718?text=${encodeURIComponent(text)}`, "_blank");
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", initWhatsAppBot);
+    </script>
 
 </body>
 

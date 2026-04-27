@@ -5045,6 +5045,7 @@ html {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 400px 1fr;
+    align-items: center;
     background: #fff;
     border-radius: 30px;
     overflow: hidden;
@@ -5764,4 +5765,227 @@ html {
 
 .highlight {
     color: #FCBB06;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.whatsapp-bot {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bot-float {
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    border: 0;
+    background: #25d366;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bot-float-icon {
+    display: flex;
+    align-items: center;
+    min-width: 34px;
+}
+
+.bot-float-icon i {
+    font-size: 28px;
+    margin-left: 4px;
+}
+
+
+.bot-text {
+    white-space: nowrap;
+    opacity: 0;
+    max-width: 0;
+    transition: opacity 0.3s, max-width 0.4s;
+    font-weight: 600;
+    margin-left: 0;
+    font-size: 16px;
+}
+
+.whatsapp-bot.active .bot-float {
+    width: 200px;
+}
+
+.whatsapp-bot.active .bot-text {
+    opacity: 1;
+    max-width: 200px;
+    margin-left: 10px;
+}
+
+.bot-panel {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 400px;
+    background: #141414;
+    border: 1px solid #333;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px) scale(0.9);
+    transition: all 0.3s ease;
+    transform-origin: bottom right;
+    /* padding: 10px 20px 20px; */
+    overflow: hidden;
+    border: 1px solid #fcba0670;
+}
+
+.whatsapp-bot.active .bot-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+.bot-head {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    background: #1b6f30;
+    padding: 10px 20px;
+}
+
+.bot-head strong {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.bot-head span {
+    color: #fff;
+}
+
+.bot-body {
+    padding: 10px 20px 20px;
+}
+
+.bot-option {
+    width: 100%;
+    height: 46px;
+    border: 1px solid #fcba0670;
+    padding-left: 10px;
+    font-size: 16px;
+    margin: 5px 0;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.bot-input {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.bot-input input {
+    flex: 1;
+    height: 46px;
+    border: 1px solid #fcba0670;
+    padding-left: 10px;
+    font-size: 16px;
+    margin: 5px 0;
+    background: #fff;
+    border-radius: 8px;
+    text-align: left;
+}
+
+
+.bot-input .btn-send {
+    width: 100px;
+    height: 46px;
+    border: 1px solid #fcba0670;
+    font-size: 14px;
+    margin: 5px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #F7BD04;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+
+@media (max-width: 460px) {
+
+    .whatsapp-bot {
+        width: 90%;
+    }
+
+    .bot-panel {
+        width: 100%;
+    }
+
+
+    .bot-input {
+        flex-direction: column;
+    }
+
+    .bot-input input {
+        flex: auto;
+        height: 46px !important;
+        border: 1px solid #fcba0670;
+        padding-left: 10px;
+        font-size: 16px;
+        margin: 5px 0;
+        background: #fff;
+        border-radius: 8px;
+        text-align: left;
+    }
+
+
+    .bot-input .btn-send {
+        width: 100%;
+    }
+
+
 }
